@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>BANGLA BOX PLAYER</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" type="text/css" href="static/clap.css?v=1"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@clappr/hlsjs-playback@1.0.1/dist/hlsjs-playback.min.js"></script>
+<link rel="icon" href="https://i.postimg.cc/8kWYsw9n/20241228_183443.png"/>
+<link rel="shortcut icon" href=""/>
+<style>
+    body { background-color: #000000; margin: 0; padding: 0; }
+    #player {
+        height: 90vh;
+        width: 100vw;
+        position: relative;
+    }
+    .watermark {
+        position: absolute;
+        bottom: 18px;
+        right: 25px;
+        color: white;
+        font-size: 15px;
+        background-color:
+        padding: 4px 8px;
+        border-radius: 5px;
+        z-index: 9999;
+        pointer-events: none;
+    }
+</style>
+</head>
+<body>
+<div id="player">
+    <div class="watermark">BANGLA BOX TV BTV HD </div>
+</div>
+<script>
+    var player = new Clappr.Player({
+        source: 'https://tvsen6.aynaott.com/btvhd/tracks-v1a1/mono.ts.m3u8',
+        width: '100%',
+        height: '100%',
+        autoPlay: true,
+        plugins: [HlsjsPlayback, LevelSelector],
+        mimeType: "application/x-mpegURL",
+        mediacontrol: { seekbar: "#ff0000", buttons: "#eee" },
+        parentId: "#player"
+    });
+</script>
+</body>
+</html>
